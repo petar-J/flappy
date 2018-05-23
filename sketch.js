@@ -45,7 +45,7 @@ function keyPressed(){
   }
 }
 
-function touchStarted(){
+function touchEnded(){
   bird.jump();
   return false
 }
