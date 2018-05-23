@@ -10,8 +10,22 @@ function Bird(){
   }
 
   this.hits = function(other){
-    let inx = this.x>other.x && this.x<other.x+other.width;
-    let iny = this.y<other.top || this.y>other.top+other.space;
+
+    // score
+    if (other.x+other.width/2 < this.x && addscore == true){
+      score += 1;
+      addscore = false;
+    }
+
+    // Distance from bird center to center of pipe
+    let distance = abs(this.x - (other.x + other.width/2));
+    let room = this.r + other.width/2;
+    let inx = distance<=room;
+
+    let top = this.y - this.r < other.top;
+    let bot = this.y + this.r > other.top + other.space;
+    let iny = top || bot;
+
     return (inx && iny);
   }
 

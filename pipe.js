@@ -5,6 +5,7 @@ function Pipe(x){
   this.width = 40;
   this.x = x;
   this.isHit = false;
+
   this.r = 255;
   this.g = 255;
   this.b = 255;
@@ -18,9 +19,12 @@ function Pipe(x){
   this.update = function(){
     this.x-=3;
     if (this.x<0-this.width){
+    // offscreen
+      addscore = true;
       this.x = width;
       this.top = floor(random(height-this.space));
     } else if (this.isHit == false){
+    // turn white
       this.color()
     }
   }
