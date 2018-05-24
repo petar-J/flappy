@@ -3,6 +3,11 @@ let gravity;
 let pipe1, pipe2;
 let score = 0;
 let addscore = true;
+let scores;
+
+function preload(){
+  scores = loadJSON('score.json');
+}
 
 function setup() {
   createCanvas(1000, 700);
