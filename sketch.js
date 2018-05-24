@@ -6,7 +6,7 @@ let highScore = 0;
 let addscore = true;
 
 function preload(){
-  return true;
+  return false;
 }
 
 function setup() {
