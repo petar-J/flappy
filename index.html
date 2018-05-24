@@ -4,26 +4,40 @@
     <title>Javascript</title>
     <meta charset="utf-8">
     <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
-    <style>
-      h1 {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  width: 1000px;
-}
 
-#score {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    width: 1000px;
-}
+    <!-- External css didnt work on github pages -->
+    <style>
+
+        body {
+        }
+
+        h2, #score, #highScore {
+          padding: 0px;
+          margin: 5px;
+          font-family: Arial, sans-serif;
+          text-align: center;
+          width: 1000px;
+      }
+
+      #highScore {
+        font-size: 25px;
+      }
+
     </style>
+
     <script src="p5.js"></script>
     <script src="sketch.js"></script>
     <script src="bird.js"></script>
     <script src="pipe.js"></script>
   </head>
+
   <body>
-    <h1> Press space to jump</h1>
-    <h2 id='score'> Score: 0 </h2>
+
+    <h1 id='score'> Score: 0 </h1>
+    <h1 id='highScore'> High score: 0 </h1>
+    <h2> Press space to jump</h2>
+
+
   </body>
+
 </html>

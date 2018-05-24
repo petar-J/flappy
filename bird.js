@@ -9,10 +9,15 @@ function Bird(){
     this.vel = this.up;
   }
 
+  this.die = function(){
+    score = 0;
+    addscore = false;
+  }
+
   this.hits = function(other){
 
-    // score
-    if (other.x+other.width/2 < this.x && addscore == true){
+    // Add to score
+    if (other.x < this.x && addscore == true){
       score += 1;
       addscore = false;
     }
@@ -30,17 +35,19 @@ function Bird(){
   }
 
   this.update = function(){
+    // Gravity
     this.vel += gravity;
     this.y += this.vel;
 
+    // Above screen
     if (this.y<0){
       this.vel = gravity;
       this.y = 0;
-    } else if (this.y>=height){
+    } // Under screen
+    else if (this.y>=height){
       this.vel = gravity;
       this.y = height;
     }
-    //this.y = constrain(this.y, 0, height);
   }
 
   this.show = function(){

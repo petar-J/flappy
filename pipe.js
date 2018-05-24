@@ -17,14 +17,16 @@ function Pipe(x){
   }
 
   this.update = function(){
+    // Moving
     this.x-=3;
+
     if (this.x<0-this.width){
-    // offscreen
+    // Offscreen
       addscore = true;
       this.x = width;
       this.top = floor(random(height-this.space));
-    } else if (this.isHit == false){
-    // turn white
+    } // Turn white
+    else if (this.isHit == false){
       this.color()
     }
   }

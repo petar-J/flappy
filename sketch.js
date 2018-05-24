@@ -2,12 +2,8 @@ let bird;
 let gravity;
 let pipe1, pipe2;
 let score = 0;
+let highScore = 0;
 let addscore = true;
-let scores;
-
-function preload(){
-  scores = loadJSON('score.json');
-}
 
 function setup() {
   createCanvas(1000, 700);
@@ -28,21 +24,25 @@ function draw() {
 
   if (bird.hits(pipe1)){
     pipe1.isHit = true;
-    pipe1.color(255,0,0);
-    score = 0;
-  } else if (bird.hits(pipe2)){
+    pipe1.color(255,0,0); // Turn red
+    bird.die();
+  }
+  else if (bird.hits(pipe2)){
     pipe2.isHit = true;
-    pipe2.color(255,0,0);
-    score = 0;
-  } else {
+    pipe2.color(255,0,0); // Turn red
+    bird.die();
+  }
+  else {
     pipe1.isHit = pipe2.isHit = false;
-    pipe1.color();
-    pipe2.color();
   }
 
+  // Changing score and highscore html elements
   document.getElementById('score').innerHTML = 'Score: '+score;
+  if (score>highScore){
+    highScore = score;
+    document.getElementById('highScore').innerHTML = 'High score: '+highScore;
+  }
 }
-
 
 function keyPressed(){
   if (keyCode == 32){
@@ -54,5 +54,5 @@ function touchStarted(){
   bird.jump();
 }
 function touchEnded(){
- return false; 
+ return false;
 }
