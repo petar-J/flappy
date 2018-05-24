@@ -3,7 +3,7 @@ function Pipe(x){
   this.space = 125;
   this.top = floor(random(height-this.space));
   this.width = 40;
-  this.speed = 3;
+  this.speed = 4;
   this.x = x;
   this.isHit = false;
 
