@@ -3,6 +3,7 @@ function Pipe(x){
   this.space = 125;
   this.top = floor(random(height-this.space));
   this.width = 40;
+  this.speed = 3;
   this.x = x;
   this.isHit = false;
 
@@ -18,7 +19,7 @@ function Pipe(x){
 
   this.update = function(){
     // Moving
-    this.x-=3;
+    this.x-=this.speed;
 
     if (this.x<0-this.width){
     // Offscreen

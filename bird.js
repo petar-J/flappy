@@ -10,8 +10,10 @@ function Bird(){
   }
 
   this.die = function(){
-    score = 0;
+    lastscore = score;
     addscore = false;
+
+    stop();
   }
 
   this.hits = function(other){
@@ -47,6 +49,9 @@ function Bird(){
     else if (this.y>=height){
       this.vel = gravity;
       this.y = height;
+      if (gameon == false){
+        makeEndScreen = true;
+      }
     }
   }
 
