@@ -5,6 +5,10 @@ let score = 0;
 let highScore = 0;
 let addscore = true;
 
+function preload(){
+  return true;
+}
+
 function setup() {
   createCanvas(1000, 700);
   bird = new Bird();
