@@ -1,5 +1,5 @@
 let bird;
-let gravity;
+const gravity = 0.5;
 let pipe1, pipe2;
 let gameon = true;
 let score = 0;
@@ -13,7 +13,6 @@ function setup() {
   bird = new Bird();
   pipe1 = new Pipe(width);
   pipe2 = new Pipe(width*1.5);
-  gravity = 0.2;
   noStroke();
 }
 
